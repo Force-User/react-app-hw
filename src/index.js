@@ -10,7 +10,7 @@ const store = {
     lastName:"Sparrow",
   },
   avatar:{
-    image:{image},
+    image:image,
     alt:"logo",
   },
 }
