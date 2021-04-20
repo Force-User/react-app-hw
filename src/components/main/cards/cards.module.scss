@@ -1,0 +1,25 @@
+.content {
+  background-image: url("https://external-preview.redd.it/IXllUFqCy7lZ9dyspz6gZHyTKb1S8ZQa0L_1QY8_Y9Q.jpg?auto=webp&s=e6f82c39a868b5770f94b6cdbaa1b73a34dc9da4");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 64px 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+.noCards {
+  font-size: 50px;
+  font-weight: 700;
+}
+.title {
+  margin: 20px 0;
+  font-size: 32px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+}
