@@ -3,7 +3,7 @@ import { apiCall } from "../../../api/mockedAPI";
 import { Card } from "./card";
 import styles from "./cards.module.scss";
 
-class Cards extends React.Component {
+class CardsContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { cards: [] };
@@ -45,4 +45,4 @@ class Cards extends React.Component {
   }
 }
 
-export default Cards;
+export default CardsContainer;
