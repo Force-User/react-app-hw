@@ -9,7 +9,6 @@
   font-size: 18px;
   z-index: 1;
   transition: 0.3s;
-  cursor: pointer;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 0px 3px rgb(68, 2, 2);
@@ -37,4 +36,31 @@
 }
 .price {
   font-weight: 600;
+}
+.cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background:none;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 1px 2px #910000;
+    transform: rotate(-45deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 1px 2px #ff0505;
+    transform: rotate(45deg);
+  }
 }

@@ -37,10 +37,10 @@ export const mockedResponse = [
     price: 256,
     title: "Turian Armor",
     imageUrl:
-      "https://lh3.googleusercontent.com/proxy/3DIVRleR53-QdezSWiwvV5zrIo5k7GvhW5huB4jUVx-NcqlMBPvRrA1jmmLuwaH9P_yKdoQ0Z0Qwe2KAkxmr-CVJxlG4kKIzkOC-LAM",
+      "http://www.writeups.org/wp-content/uploads/Garrus-Vakarian-Mass-Effect-2-Profile-g.jpg",
     gender: "male",
   },
-  
+
   {
     id: 6,
     price: 256,
