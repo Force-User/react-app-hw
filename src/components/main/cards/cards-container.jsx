@@ -3,7 +3,6 @@ import { apiCall } from "../../../api/mockedAPI";
 import { Card } from "./card";
 import styles from "./cards-container.module.scss";
 import { CardsCreationForm } from "./cards-creation-form";
-let id = 10;
 
 const CardsContainer = (props) => {
   useEffect(() => {
@@ -48,8 +47,10 @@ const CardsContainer = (props) => {
       priceValue !== "" &&
       imageValue !== ""
     ) {
+      const arrayId = cards.length !== 0 ? cards.map((item) => item.id) : [1];
+      const newId = Math.max(...arrayId);
       const newCard = {
-        id: ++id,
+        id: newId + 1,
         price: priceValue,
         title: titleValue,
         imageUrl: imageValue,
