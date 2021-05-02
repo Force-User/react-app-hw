@@ -1,0 +1,72 @@
+.content {
+  margin-top: 60px;
+  padding: 25px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-shadow: 3px 3px 3px #000;
+  font-weight: 600;
+  font-size: 24px;
+  box-shadow: 1px 1px 3px 3px #000;
+  background-color: #2f0b47;
+  border-radius: 15px;
+}
+.title {
+  margin-bottom: 15px;
+  font-size: 54px;
+  text-transform: uppercase;
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.item {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  &Text {
+    margin-right: 45px;
+  }
+  &Input {
+    width: 350px;
+    min-height: 50px;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 3px solid #000;
+    transition: .5s;
+    &:focus {
+        box-shadow: 0px 0px 3px 3px aqua;
+    }
+  }
+  &Select {
+      padding: 10px;
+    width: 300px;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: .5s;
+    &:focus {
+        box-shadow: 0px 0px 3px 3px aqua;
+    }
+  }
+  &:nth-child(n + 2) {
+    margin-top: 30px;
+  }
+}
+.button {
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
