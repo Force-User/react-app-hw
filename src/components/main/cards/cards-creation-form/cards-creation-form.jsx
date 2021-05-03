@@ -10,6 +10,7 @@ const CardsCreationForm = ({
   genderValue,
   priceValue,
   imageValue,
+  isFieldEmpty,
 }) => {
   return (
     <form className={styles.content} onSubmit={handleSubmit}>
@@ -17,12 +18,23 @@ const CardsCreationForm = ({
       <ul className={styles.list}>
         <li className={styles.item}>
           <span className={styles.itemText}>Title card</span>
-          <input
-            className={styles.itemInput}
-            onChange={handleChangeTitle}
-            value={titleValue}
-            type="text"
-          />
+          <div className={styles.itemContent}>
+            <input
+              className={`${styles.itemContentInput} ${
+                isFieldEmpty && !titleValue && styles.itemContentInputError
+              }`}
+              onChange={handleChangeTitle}
+              value={titleValue}
+              type="text"
+            />
+            <span
+              className={`${styles.itemContentMessage} ${
+                isFieldEmpty && !titleValue && styles.itemContentMessageError
+              }`}
+            >
+              this field is required
+            </span>
+          </div>
         </li>
 
         <li className={styles.item}>
@@ -38,21 +50,43 @@ const CardsCreationForm = ({
         </li>
         <li className={styles.item}>
           <span className={styles.itemText}>Price</span>
-          <input
-            className={styles.itemInput}
-            onChange={handleChangePrice}
-            value={priceValue}
-            type="text"
-          />
+          <div className={styles.itemContent}>
+            <input
+              className={`${styles.itemContentInput} ${
+                isFieldEmpty && !priceValue && styles.itemContentInputError
+              }`}
+              onChange={handleChangePrice}
+              value={priceValue}
+              type="text"
+            />
+            <span
+              className={`${styles.itemContentMessage} ${
+                isFieldEmpty && !priceValue && styles.itemContentMessageError
+              }`}
+            >
+              this field is required
+            </span>
+          </div>
         </li>
         <li className={styles.item}>
           <span className={styles.itemText}>Image URL</span>
-          <input
-            className={styles.itemInput}
-            onChange={handleChangeImage}
-            value={imageValue}
-            type="text"
-          />
+          <div className={styles.itemContent}>
+            <input
+              className={`${styles.itemContentInput} ${
+                isFieldEmpty && !imageValue && styles.itemContentInputError
+              }`}
+              onChange={handleChangeImage}
+              value={imageValue}
+              type="text"
+            />
+            <span
+              className={`${styles.itemContentMessage} ${
+                isFieldEmpty && !imageValue && styles.itemContentMessageError
+              }`}
+            >
+              this field is required
+            </span>
+          </div>
         </li>
       </ul>
       <button className={styles.button}>submit</button>
