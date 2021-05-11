@@ -1,0 +1,18 @@
+.content {
+  border: 1px solid #fff;
+  padding: 10px;
+  &_list {
+    display: flex;
+    list-style-type: none;
+    &__item {
+      &:nth-of-type(n + 2) {
+        margin-left: 15px;
+      }
+    }
+  }
+  &__link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+  }
+}

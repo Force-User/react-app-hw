@@ -4,6 +4,7 @@ import "./index.scss";
 import { App } from "./components";
 import reportWebVitals from "./reportWebVitals";
 import image from "./assets/logo.svg";
+import { BrowserRouter } from "react-router-dom";
 const store = {
   user: {
     firstName: "Jack",
@@ -17,7 +18,9 @@ const store = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App data={store} />
+    <BrowserRouter>
+      <App data={store} />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
