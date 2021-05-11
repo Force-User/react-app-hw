@@ -5,16 +5,18 @@ import styles from "./cards-container.module.scss";
 import { CardsCreationForm } from "./cards-creation-form";
 
 const CardsContainer = (props) => {
-  useEffect(() => {
-    apiCall().then((data) => {
-      setCards(data);
-    });
-  }, []);
   const [cards, setCards] = useState([]);
   const [titleValue, setTitleValue] = useState("");
   const [genderValue, setGenderValue] = useState("male");
   const [priceValue, setPriceValue] = useState("");
   const [imageValue, setImageValue] = useState("");
+  const [isFieldEmpty, setIsFieldEmpty] = useState(false);
+
+  useEffect(() => {
+    apiCall().then((data) => {
+      setCards(data);
+    });
+  }, []);
 
   const handleChangeTitle = (e) => {
     setTitleValue(e.target.value);
@@ -47,6 +49,7 @@ const CardsContainer = (props) => {
       priceValue !== "" &&
       imageValue !== ""
     ) {
+      setIsFieldEmpty(false);
       const arrayId = cards.length !== 0 ? cards.map((item) => item.id) : [1];
       const newId = Math.max(...arrayId);
       const newCard = {
@@ -61,7 +64,9 @@ const CardsContainer = (props) => {
       setPriceValue("");
       setGenderValue("male");
       setImageValue("");
+      return;
     }
+    setIsFieldEmpty(true);
   };
 
   const handleClick = (e) => {
@@ -88,6 +93,7 @@ const CardsContainer = (props) => {
             genderValue={genderValue}
             priceValue={priceValue}
             imageValue={imageValue}
+            isFieldEmpty={isFieldEmpty}
           />
         </div>
       </section>
@@ -122,6 +128,7 @@ const CardsContainer = (props) => {
           genderValue={genderValue}
           priceValue={priceValue}
           imageValue={imageValue}
+          isFieldEmpty={isFieldEmpty}
         />
       </div>
     </section>
