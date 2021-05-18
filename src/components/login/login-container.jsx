@@ -1,20 +1,25 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import { setIsAuth } from '../../redux/actions/actionAuth';
 import Login from './login';
 
-const LoginContainer = ({ setIsAuth }) => {
+const LoginContainer = () => {
+	const credentialsDefaults = {
+		login: false,
+		passwords: false
+	};
+	const dispatch = useDispatch();
 	const history = useHistory();
 	const [ loginData, setLoginData ] = useState({
 		login: '',
 		password: ''
 	});
 	const [ isFill, setIsFill ] = useState({
-		login: false,
-		passwords: false
+		...credentialsDefaults
 	});
 	const [ isTouch, setIsTouch ] = useState({
-		login: false,
-		password: false
+		...credentialsDefaults
 	});
 
 	const handleBlur = (e) => {
@@ -34,10 +39,10 @@ const LoginContainer = ({ setIsAuth }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const isAllFiedlFill = Object.values(loginData).every((item) => item);
-		if (isAllFiedlFill) {
+		const isAllFieldsFilled = Object.values(loginData).every((item) => item);
+		if (isAllFieldsFilled) {
 			history.push('/profile');
-			setIsAuth(true);
+			dispatch(setIsAuth(true));
 			return;
 		}
 		setIsTouch({ login: true, password: true });

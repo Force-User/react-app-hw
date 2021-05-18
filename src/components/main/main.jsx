@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Redirect, Route } from 'react-router';
+import { Route } from 'react-router';
 import LoginContainer from '../login/';
 import { CardsContainer } from './cards';
 import styles from './main.module.scss';
