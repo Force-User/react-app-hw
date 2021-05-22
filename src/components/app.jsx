@@ -1,15 +1,21 @@
-import styles from "./app.module.scss";
-import { Footer } from "./footer";
-import { Header } from "./header";
-import { Main } from "./main";
+import { useState } from 'react';
+import { Redirect } from 'react-router';
+import styles from './app.module.scss';
+import { Footer } from './footer';
+import { Header } from './header';
+import { Main } from './main';
 const App = ({ data }) => {
-  return (
-    <div className={styles.content}>
-      <Header userData={data.user} />
-      <Main avatar={data.avatar} />
-      <Footer />
-    </div>
-  );
+	const [ isAuth, setIsAuth ] = useState(false);
+
+	return (
+		<div className={styles.content}>
+			{!isAuth && <Redirect to="/login" />}
+			<Header userData={data.user} isAuth={isAuth} />
+			<Main avatar={data.avatar} setIsAuth={setIsAuth} />
+			<Footer isAuth={isAuth} />
+		</div>
+	);
 };
+
 
 export default App;

@@ -1,12 +1,13 @@
-import styles from "./header.module.scss";
+import HeaderNav from './header-nav';
+import styles from './header.module.scss';
 
-const Header = ({ userData }) => {
-  return (
-    <header className={styles.content}>
-      <span className={styles.fullName}>
-        {userData.firstName} {userData.lastName}
-      </span>
-    </header>
-  );
+const Header = ({ isAuth }) => {
+	return (
+			<header className={styles.content}>
+				<div className={styles.content__wrapper} />
+				<HeaderNav isAuth={isAuth}/>
+			</header>
+		
+	);
 };
 export default Header;
