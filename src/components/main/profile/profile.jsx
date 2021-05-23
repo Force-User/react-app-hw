@@ -1,12 +1,11 @@
-import styles from "./profile.module.scss";
 import Home from "./home";
 import About from "./about";
 
-const Profile = (props) => {
+const Profile = ({fullName,position,info}) => {
   return (
     <>
-      <Home />
-      <About />
+      <Home fullName={fullName} position={position} />
+      <About info={info}/>
     </>
   );
 };
